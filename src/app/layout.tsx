@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
+import { Header } from "@/components/header";
 import "./globals.css";
 
 const inter = Inter({
@@ -47,6 +48,7 @@ export default function RootLayout({
         className="min-h-full flex flex-col bg-black text-white"
         style={{ fontFamily: "var(--font-plus-jakarta), sans-serif" }}
       >
+        <Header />
         {children}
       </body>
     </html>

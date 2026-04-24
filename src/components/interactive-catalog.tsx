@@ -435,7 +435,7 @@ export function InteractiveCatalog() {
                       {isSnacks ? (
                         <>
                           <motion.a
-                            href="https://wa.me/51929741557?text=Hola%20Vendrix,%20me%20gustaría%20solicitar%20información%20sobre%20la%20máquina%20TCN%20CSC-10G"
+                            href="https://wa.me/51929741557?text=Hola%20Vendrix%2C%20me%20interesa%20el%20modelo%20TCN%20CSC-10G."
                             target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.04 }}
@@ -446,7 +446,7 @@ export function InteractiveCatalog() {
                             <ArrowRight size={14} />
                           </motion.a>
                           <motion.a
-                            href="https://wa.me/51929741557?text=Hola%20Vendrix,%20me%20gustaría%20solicitar%20información%20sobre%20la%20máquina%20Glazer%20GF-EXR610MB"
+                            href="https://wa.me/51929741557?text=Hola%20Vendrix%2C%20me%20interesa%20el%20modelo%20Glazer%20GF-EXR610MB."
                             target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.04 }}
@@ -459,7 +459,7 @@ export function InteractiveCatalog() {
                         </>
                       ) : (
                         <motion.a
-                          href="https://wa.me/51929741557?text=Hola%20Vendrix,%20me%20gustaría%20solicitar%20información%20sobre%20la%20máquina%20de%20Café%20Premium%20TCN%20NCF-7N"
+                          href="https://wa.me/51929741557?text=Hola%20Vendrix%2C%20me%20interesa%20el%20modelo%20de%20Caf%C3%A9%20Premium%20TCN%20NCF-7N."
                           target="_blank"
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.04 }}

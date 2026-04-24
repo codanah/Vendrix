@@ -17,11 +17,13 @@ interface PhoneEntry {
   numbers: { display: string; wa: string }[];
 }
 
+const WA_LINK = "https://wa.me/51929741557?text=Hola%20Vendrix,%20vengo%20desde%20la%20sección%20de%20contacto%20de%20la%20web.";
+
 const PHONES: PhoneEntry[] = [
   {
     label: "Alexander Leon · Asesor Comercial",
     numbers: [
-      { display: "929 741 557", wa: "https://wa.me/51929741557" },
+      { display: "929 741 557", wa: WA_LINK },
     ],
   },
 ];
@@ -120,7 +122,7 @@ export function Footer() {
                   ))}
                   {/* CTA button */}
                   <a
-                    href="https://wa.me/51929741557?text=Hola%20Vendrix%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20m%C3%A1quinas."
+                    href={WA_LINK}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-1 inline-flex items-center gap-2 bg-green-500/15 hover:bg-green-500/25 border border-green-500/25 text-green-400 hover:text-green-300 text-xs font-semibold px-4 py-2 rounded-full transition-colors duration-150 w-fit"

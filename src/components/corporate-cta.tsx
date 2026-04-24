@@ -44,20 +44,22 @@ const BENEFITS: Benefit[] = [
 
 interface ContactLine {
   label: string;
-  numbers: { display: string; tel: string }[];
+  numbers: { display: string; wa: string }[];
 }
+
+const WA_LINK = "https://wa.me/51929741557?text=Hola%20Vendrix,%20vengo%20desde%20la%20sección%20de%20contacto%20de%20la%20web.";
 
 const CONTACTS: ContactLine[] = [
   {
     label: "Atención al Cliente",
     numbers: [
-      { display: "945 683 203", tel: "+51945683203" },
-      { display: "918 994 299", tel: "+51918994299" },
+      { display: "945 683 203", wa: WA_LINK },
+      { display: "918 994 299", wa: WA_LINK },
     ],
   },
   {
     label: "Comercial — Alexander Leon",
-    numbers: [{ display: "929 741 557", tel: "+51929741557" }],
+    numbers: [{ display: "929 741 557", wa: WA_LINK }],
   },
 ];
 
@@ -207,7 +209,7 @@ export function CorporateB2BAndCTA() {
 
             {/* CTA button */}
             <motion.a
-              href="https://wa.me/51929741557?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20Vendrix%20para%20mi%20empresa."
+              href="https://wa.me/51929741557?text=Hola%20Vendrix,%20vengo%20desde%20la%20sección%20de%20contacto%20de%20la%20web."
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
@@ -245,9 +247,11 @@ export function CorporateB2BAndCTA() {
                       </div>
                       <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-0.5">
                         {contact.numbers.map((n, ni) => (
-                          <span key={n.tel} className="flex items-center gap-1.5">
+                          <span key={n.wa} className="flex items-center gap-1.5">
                             <a
-                              href={`tel:${n.tel}`}
+                              href={n.wa}
+                              target="_blank"
+                              rel="noopener noreferrer"
                               className="text-base font-bold text-white/80 hover:text-white transition-colors duration-150"
                               style={{ fontFamily: "var(--font-geist-mono)" }}
                             >

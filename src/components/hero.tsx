@@ -1,16 +1,23 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight, ChevronDown, Zap, Users, Clock } from "lucide-react";
 
-const WA = "https://wa.me/51929741557?text=Hola%20Vendrix%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20m%C3%A1quinas%20para%20mi%20empresa.";
+const WA =
+  "https://wa.me/51929741557?text=Hola%20Vendrix%2C%20quiero%20solicitar%20una%20m%C3%A1quina%20para%20mi%20empresa.";
 
 export function Hero() {
+  const { scrollY } = useScroll();
+  const machineParallax = useTransform(scrollY, [0, 600], [0, -70]);
+
   return (
     <section
-      className="relative min-h-screen bg-white flex items-center overflow-hidden"
-      style={{ fontFamily: "var(--font-plus-jakarta)" }}
+      className="relative min-h-screen flex items-center overflow-hidden"
+      style={{
+        background: "linear-gradient(160deg, #ffffff 0%, #f8fafc 100%)",
+        fontFamily: "var(--font-plus-jakarta)",
+      }}
     >
       {/* Dot grid texture */}
       <div
@@ -138,11 +145,15 @@ export function Hero() {
             {/* Soft red glow under machine */}
             <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-72 h-40 bg-red-500/8 blur-3xl rounded-full" />
 
-            {/* Floating machine */}
+            {/* Floating machine — parallax wrapper + float animation */}
+            <motion.div
+              style={{ y: machineParallax }}
+              className="relative w-[260px] md:w-[300px] lg:w-[340px] h-full"
+            >
             <motion.div
               animate={{ y: [0, -14, 0] }}
               transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-[260px] md:w-[300px] lg:w-[340px] h-full"
+              className="relative w-full h-full"
             >
               <Image
                 src="/images/maquina-snack-glazer.png"
@@ -153,6 +164,7 @@ export function Hero() {
                 className="object-contain object-bottom"
                 sizes="(max-width:768px) 260px, (max-width:1024px) 300px, 340px"
               />
+            </motion.div>
             </motion.div>
 
             {/* Floating badge — capacity */}
